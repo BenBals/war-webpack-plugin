@@ -15,7 +15,7 @@ function WarPlugin(options) {
   }
 }
 
-WarPlugin.prototype.apply = function(complier) {
+WarPlugin.prototype.apply = function(compiler) {
   const zipOptions = {
     zlib: {level: 0},
     store: true
