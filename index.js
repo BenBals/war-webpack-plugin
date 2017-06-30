@@ -1,5 +1,3 @@
-'use strict';
-
 var fs = require('fs');
 var archiver = require('archiver');
 var path = require('path');
@@ -45,7 +43,7 @@ WarPlugin.prototype.apply = function(compiler) {
 
     // Append each asset from webpack to the archive
     Object.keys(compilation.assets).forEach((key) => {
-      let source = compilation.assets[key].source();
+      var source = compilation.assets[key].source();
       source = Buffer.isBuffer(source) ? source : new Buffer(source);
       archive.append(source, {name: key});
     });
@@ -71,7 +69,7 @@ WarPlugin.prototype.apply = function(compiler) {
 }
 
 WarPlugin.prototype._generateUrlRewriteXmlBuffer = function () {
-  let urlrewriteXml = '<urlrewrite default-match-type="wildcard">';
+  var urlrewriteXml = '<urlrewrite default-match-type="wildcard">';
   this.html5.paths.forEach((p) => {
     urlrewriteXml += `<rule><from>${p}</from><to>/index.html</to></rule>`;
   });
