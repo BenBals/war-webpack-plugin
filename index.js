@@ -1,3 +1,5 @@
+'use strict';
+
 var fs = require('fs');
 var archiver = require('archiver');
 var path = require('path');
